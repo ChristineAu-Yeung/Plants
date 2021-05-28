@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {Container, Row, Col } from 'react-bootstrap';
+import {Container, Row, Col, Nav } from 'react-bootstrap';
 import PlantCard from './plantCard';
 import Header from './header';
+import Navbar from './navBar';
 
 function HomePage() {
 
@@ -26,19 +27,40 @@ function HomePage() {
             {
                 name: "Birds of Paradise",
                 url: "https://vanbelleflowers.com/wp-content/uploads/IMG_3960-1.jpg"
-            }
-            
+            },
+            {
+                name: "Banana Plant",
+                url: "https://i.pinimg.com/736x/9b/aa/da/9baada90194f56e2e663c4789ec0c040.jpg"
+            },
+            {
+                name: "Philodendron Birkin",
+                url: "https://smartgardenguide.com/wp-content/uploads/2020/11/philodendron-birkin-care-31-783x522.jpg"
+            },
+            {
+                name: "Birds Nest Fern",
+                url: "https://cdn.shopify.com/s/files/1/2097/3287/products/crispy-wave_1_2000x.jpg?v=1610544812"
+            },    
         ]
     )
 
+    const [searchCriteria, setSearchCriteria] = useState("")
+    console.log({searchCriteria})
 
     return (
         <div>
             <Header/>
+            <Navbar setSearchCriteria={setSearchCriteria} />
             <Container>
                 <Row>
                     {plants.map((plant) => {
-                        return <PlantCard name={plant.name} url={plant.url}/>
+                        if (searchCriteria === "") {
+                            return <PlantCard name={plant.name} url={plant.url}/>
+                        }
+                        else {
+                            if (plant.name.includes(searchCriteria)){
+                                return <PlantCard name={plant.name} url={plant.url}/>
+                            }
+                        }
                     })}
                 </Row>
             </Container>  
