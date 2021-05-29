@@ -3,6 +3,9 @@ import {Container, Row, Col, Nav } from 'react-bootstrap';
 import PlantCard from './plantCard';
 import Header from './header';
 import Navbar from './navBar';
+import FicusPage from './typePages/ficusPage'
+import FernPage from './typePages/fernPage'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function HomePage() {
 
@@ -18,7 +21,7 @@ function HomePage() {
             },
             {
                 name: "Rubber Plant",
-                url: "https://www.proflowers.com/blog/wp-content/uploads/2018/08/rubber-plant-thumb.jpg"
+                url: "https://homedepot.scene7.com/is/image/homedepotcanada/p_1001585724.jpg?wid=1000&hei=1000&op_sharpen=1"
             },
             {
                 name: "Ficus Audrey",
@@ -34,7 +37,7 @@ function HomePage() {
             },
             {
                 name: "Philodendron Birkin",
-                url: "https://smartgardenguide.com/wp-content/uploads/2020/11/philodendron-birkin-care-31-783x522.jpg"
+                url: "https://mk0newsiteviodqfcuwv.kinstacdn.com/wp-content/uploads/2019/10/20200423-DSC_5998.jpg"
             },
             {
                 name: "Birds Nest Fern",
@@ -44,26 +47,38 @@ function HomePage() {
     )
 
     const [searchCriteria, setSearchCriteria] = useState("")
-    console.log({searchCriteria})
+    // console.log({searchCriteria})
 
     return (
         <div>
             <Header/>
             <Navbar setSearchCriteria={setSearchCriteria} />
-            <Container>
-                <Row>
-                    {plants.map((plant) => {
-                        if (searchCriteria === "") {
-                            return <PlantCard name={plant.name} url={plant.url}/>
-                        }
-                        else {
-                            if (plant.name.includes(searchCriteria)){
-                                return <PlantCard name={plant.name} url={plant.url}/>
-                            }
-                        }
-                    })}
-                </Row>
-            </Container>  
+            <BrowserRouter>
+                <Switch>
+                    <Route exact={true} path="/">
+                        <Container>
+                            <Row>
+                                {plants.map((plant) => {
+                                    if (searchCriteria === "") {
+                                        return <PlantCard name={plant.name} url={plant.url}/>
+                                    }
+                                    else {
+                                        if (plant.name.includes(searchCriteria)){
+                                            return <PlantCard name={plant.name} url={plant.url}/>
+                                        }
+                                    }
+                                })}
+                            </Row>
+                        </Container>  
+                    </Route>
+                    <Route path="/Ficus">
+                        <FicusPage/>
+                    </Route>
+                    <Route path="/Ficus">
+                        <FernPage/>
+                    </Route>
+                </Switch>
+            </BrowserRouter>
         </div>
       
     )

@@ -7,7 +7,7 @@ function header() {
             <Row>
                 <Col xs={12} className={"no-padding"}>
                     <div className={"header"}>
-                        <div className={"ml-5"}>Water is wet </div>
+                        <div className={"headerName"}>Water is Wet</div>
                     </div>
                 </Col>
             </Row>
