@@ -31,12 +31,12 @@ function NavBar({setSearchCriteria}) {
     }
 
     return (
-        <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">myPlants</Navbar.Brand>
+        <Navbar className="NavBar" bg="light" expand="lg">
+        <Navbar.Brand href="/">myPlants</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-            <Nav.Link href="/">All Plants</Nav.Link>
+            <Nav.Link href="/Plants">All Plants</Nav.Link>
             <NavDropdown title="Types" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/Ficus" onClick={logButtonName}>Ficus</NavDropdown.Item>
                 <NavDropdown.Item href="/Philodendron" onClick={logButtonName}>Philodendron</NavDropdown.Item>

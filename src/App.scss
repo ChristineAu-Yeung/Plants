@@ -43,10 +43,18 @@
   font-size: 5rem;
 }
 
+.headerName{
+	margin-left: 2rem;
+}
+
 .ml-5 {
   margin-left: 1.5rem;
 }
 
 .no-padding {
   padding: 0 !important; // override padding rule
+}
+
+.NavBar {
+	margin-bottom: 2rem;
 }
