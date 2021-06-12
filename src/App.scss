@@ -55,6 +55,29 @@
   padding: 0 !important; // override padding rule
 }
 
-.NavBar {
-	margin-bottom: 2rem;
+.navBar {
+  display: flex;
+  flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	
+	.avatarImg{
+		border-radius: 50rem;
+		height: 2.5rem;
+		width: 2.5rem;
+	}
+
+}
+
+.inline {
+  display: inline;
+}
+
+.searchButton {
+	float: right;
+	background-color: #52b788;
+	border: none;
+	border-radius: 5px;
+	padding:  0.25rem 0.40rem 0.25rem 0.40rem;
 }

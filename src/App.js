@@ -1,10 +1,10 @@
 import './App.scss';
 
-import HomePage from './components/homePage';
+import Router from './components/router';
 
 function App() {
   return (
-    <HomePage/>
+    <Router/>
   );
 }
 

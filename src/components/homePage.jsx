@@ -1,12 +1,9 @@
+import {Container, Row, Col} from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
 import PlantCard from './PlantCard/PlantCard';
-import Header from './header';
-import Navbar from './navBar';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import TypePage from './typePages/typePage';
-function HomePage() {
 
+function HomePage(props) {
+	const { searchCriteria } = props;
 	const [plants, setPlants] = useState(
 		[
 			{
@@ -44,46 +41,28 @@ function HomePage() {
 		]
 	)
 
-	const [searchCriteria, setSearchCriteria] = useState("")
-	// console.log({searchCriteria})
-
 	return (
-		<div>
-			<Header />
-			<Navbar setSearchCriteria={setSearchCriteria} />
-			<BrowserRouter>
-				<Switch>
-					<Route exact={true} path="/">
-						<Container>
-							<Row>
 
-								{plants.map((plant) => {
-									if (searchCriteria === "") {
-										return (
-											<Col sm={6} md={4} lg={3}>
-												<PlantCard name={plant.name} src={plant.src} />
-											</Col>
-										)
-									}
-									else {
-										if (plant.name.includes(searchCriteria)) {
-											<Col xs={6} sm={4} md={3}>
-												<PlantCard name={plant.name} src={plant.src} />
-											</Col>
-										}
-									}
-								})}
-
-							</Row>
-						</Container>
-					</Route>
-					<Route path="/Plants">
-						<TypePage />
-					</Route>
-				</Switch>
-			</BrowserRouter>
-		</div>
-
+		<Container>
+			<Row>
+				{plants.map((plant) => {
+					if (searchCriteria === "") {
+						return (
+							<Col sm={6} md={4} lg={3}>
+								<PlantCard name={plant.name} src={plant.src} />
+							</Col>
+						)
+					}
+					else {
+						if (plant.name.includes(searchCriteria)) {
+							<Col sm={6} md={4} lg={3}>
+								<PlantCard name={plant.name} src={plant.src} />
+							</Col>
+						}
+					}
+				})}
+			</Row>
+		</Container>
 	)
 }
 
