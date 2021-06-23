@@ -75,3 +75,42 @@
 	-webkit-user-select: none;
 	-ms-user-select: none;
 }
+
+// typeCard
+
+.typeContainer {
+	
+	display: flex;
+	flex-direction: column;	
+	width: 100%;
+	justify-content: center;
+	padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+	
+	.typeImage { 
+		object-fit: cover;
+		height: 12rem;
+		max-height: 100rem;
+		min-height: 5rem;
+		border-radius: 0.25rem;
+		z-index: 1;
+	}
+
+	.typeName {
+		font-family: "Raleway", sans-serif;
+		font-weight: 700;
+		font-size: 2rem;
+		position: relative;
+		bottom: 3.5rem;
+		left: 0;
+		margin: 0 auto;
+		margin-left: 0.5rem;
+		padding-left: 1rem;
+		border-radius: 10px;
+		color:white;
+		z-index: 10;
+	}
+}
+
+.mb-0 {
+	margin-bottom : 0;
+}

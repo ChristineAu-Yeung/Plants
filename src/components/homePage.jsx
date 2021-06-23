@@ -6,7 +6,7 @@ import plantsActions from '../redux/actions/plants.action';
 // save jwt to cookie
 
 function HomePage(props) {
-	const { searchCriteria, dispatch } = props;
+	const { dispatch } = props;
 	const { plants } = props;
 
 	useEffect(() => {

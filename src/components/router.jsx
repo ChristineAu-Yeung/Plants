@@ -4,6 +4,7 @@ import Navbar from './navBar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TypePage from './typePages/typePage';
 import HomePage from './homePage'
+import AllTypes from './typePages/allTypes';
 
 function Router() {
 
@@ -16,11 +17,14 @@ function Router() {
 			<BrowserRouter>
 				<Switch>
 					<Route exact={true} path={["/myPlants", "/"]}>
-							<HomePage searchCriteria={searchCriteria}/>
+						<HomePage searchCriteria={searchCriteria} />
 					</Route>
-					<Route path="/settings"/>
+					<Route path="/settings" />
+					<Route path="/AllTypes">
+						<AllTypes />
+					</Route>
 					<Route path="/:plant">
-							<TypePage/>
+						<TypePage />
 					</Route>
 				</Switch>
 			</BrowserRouter>

@@ -38,7 +38,7 @@ function NavBar({ setSearchCriteria }) {
 		<Navbar.Collapse id="basic-navbar-nav">
 		    <Nav className="mr-auto">
 		    <NavDropdown title="Types" id="basic-nav-dropdown">
-		        <NavDropdown.Item href="/Plants" onClick={logButtonName}>Ficus</NavDropdown.Item>
+		        <NavDropdown.Item href="/Ficus" onClick={logButtonName}>Ficus</NavDropdown.Item>
 		        <NavDropdown.Item href="/Philodendron" onClick={logButtonName}>Philodendron</NavDropdown.Item>
 		        <NavDropdown.Item href="/Fern" onClick={logButtonName}>Fern</NavDropdown.Item>
 		        <NavDropdown.Item href="/Succulent" onClick={logButtonName}>Succulent</NavDropdown.Item>
@@ -47,7 +47,7 @@ function NavBar({ setSearchCriteria }) {
 		        <NavDropdown.Item href="/Alocasia" onClick={logButtonName}>Alocasia</NavDropdown.Item>
 		        <NavDropdown.Item href="/Sansevieria" onClick={logButtonName}>Sansevieria </NavDropdown.Item>
 		        <NavDropdown.Divider />
-		        <NavDropdown.Item href="/All">All</NavDropdown.Item>
+		        <NavDropdown.Item href="/AllTypes">All</NavDropdown.Item>
 		    </NavDropdown>
 				{/* <Button variant="outline-success">Add a Plant</Button> */}
 				</Nav>
@@ -58,33 +58,6 @@ function NavBar({ setSearchCriteria }) {
 		    </Form>
 		</Navbar.Collapse>
 		</Navbar>
-
-		// <Row>
-		// 	<Col xs={12}>
-		// 		<div className="navBar">
-		// 			<div>
-		// 				<div className={"inline"}>myPlants</div>
-		// 				<div class="dropdown inline">
-		// 					<button class="dropbtn inline">Dropdown</button>
-		// 					<div class="dropdown-content inline">
-		// 						<a href="/Plants">Ficus</a>
-		// 						<a href="/Plants">Philodendron</a>
-		// 						<a href="/Plants">Alocasia</a>
-		// 					</div>
-		// 				</div>
-		// 			</div>
-		// 			<div>
-		// 				<div className="avatar inline">
-		// 					<img className="avatarImg" src={kaisa} />
-		// 				</div>
-		// 				<input className={"inline"} type="text" id="fname" name="fname" />
-		// 				<button className="searchButton">
-		// 					Search
-		// 				</button>
-		// 			</div>
-		// 		</div>
-		// 	</Col>
-		// </Row>
 	)
 }
 
