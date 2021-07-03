@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './header';
-import Navbar from './navBar';
+import Navbar from './Navbar/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TypePage from './typePages/typePage';
 import HomePage from './homePage'

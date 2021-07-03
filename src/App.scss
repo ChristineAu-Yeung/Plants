@@ -25,11 +25,22 @@
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 5rem;
+
+	.leavesIcon {
+		transform: rotate(180deg);
+		position: absolute;
+		right: 0;
+		top: -1.5rem;
+		opacity: 60%;
+		width: 47.5%;
+	}
+
+	.headerName{
+		margin-left: 2rem;
+	}
 }
 
-.headerName{
-	margin-left: 2rem;
-}
+
 
 .ml-5 {
   margin-left: 1.5rem;
@@ -39,29 +50,15 @@
   padding: 0 !important; // override padding rule
 }
 
-.navBar {
-  display: flex;
-  flex-direction: row;
-	width: 100%;
-	justify-content: space-between;
-	align-items: center;
-	
-	.avatarImg{
-		border-radius: 50rem;
-		height: 2.5rem;
-		width: 2.5rem;
-	}
-
-}
-
 .inline {
   display: inline;
 }
 
-.searchButton {
-	float: right;
-	background-color: #52b788;
-	border: none;
-	border-radius: 5px;
-	padding:  0.25rem 0.40rem 0.25rem 0.40rem;
-}
+// .searchButton {
+// 	float: right;
+// 	background-color: #52b788;
+// 	border: none;
+// 	border-radius: 5px;
+// 	padding:  0.25rem 0.40rem 0.25rem 0.40rem;
+// }
+
