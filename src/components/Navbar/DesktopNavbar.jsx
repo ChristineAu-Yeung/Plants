@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import kaisa from '../images/kai.jpg';
 import DropDown from './dropDown';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import AddPlantModal from './AddPlantModal';
 
 function NavBar({ setSearchCriteria }) {
 
@@ -23,32 +24,36 @@ function NavBar({ setSearchCriteria }) {
 	// let [a,b] = [0,1]
 	// console.log({a,b})
 
-	const [temp, setTemp] = useState("")
-
-	function logButtonName(e) {
-		console.log(e.target.text);
-	}
+	const [showModal, setShowModal] = useState(false);
 
 	return (
 
-		<Row>
-			<Col>
-				<div className="tempNavBar">
-					<div className="leftNavBar">
-						<div href="/myPlants">myPlants</div>
-						<DropDown />
-						<div className="genusTitle">Genus</div>
-					</div>
-					<div className="rightNavBar">
-						<button className="navBarButton">Add a Plant</button>
-						<img className="avatarImage" src={kaisa} />
-						<input className="navBarInput" placeholder="Search" />
-						<button className="navBarButton">Search</button>
-					</div>
-				</div>
-			</Col>
-		</Row>
-
+		<div>
+			{
+				showModal &&
+				<AddPlantModal showModal={showModal} setShowModal={(showModal) => setShowModal(showModal)} />
+			}
+			<div>
+				<Row>
+					<Col>
+						<div className="tempNavBar">
+							<div className="leftNavBar">
+								<div href="/myPlants">myPlants</div>
+								<DropDown />
+								<div className="genusTitle">Genus</div>
+							</div>
+							<div className="rightNavBar">
+								{console.log(showModal)}
+								<button className="navBarButton" onClick={() => setShowModal(true)}>Add a Plant</button>
+								<img className="avatarImage" src={kaisa} />
+								<input className="navBarInput" placeholder="Search" />
+								<button className="navBarButton">Search</button>
+							</div>
+						</div>
+					</Col>
+				</Row>
+			</div>
+		</div>
 	)
 }
 

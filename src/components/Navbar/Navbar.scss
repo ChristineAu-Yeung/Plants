@@ -31,9 +31,9 @@
 		width: 27.5rem;
 	}
 
-	.genusTitle {
-		margin-left: 10px;
-	}
+	// .genusTitle {
+	// 	margin-left: 5px;
+	// }
 
 	.dropDown {
 		display: inline-block;
@@ -81,4 +81,21 @@
 		white-space: nowrap;
 		overflow: hidden;
 	}
+}
+
+.addPlantModal {
+	position: fixed;
+	top: 30%;
+	left: 30%;
+	z-index: 5;
+	border: 2px solid #030303;
+	width: 40%;
+	height: 40%;
+  font-family: "Raleway", sans-serif;
+	background-color: rgba(185, 204, 185, 0.747);
+	border-radius: 0.5rem;
+  display: flex;	
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
