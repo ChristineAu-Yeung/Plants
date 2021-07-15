@@ -5,16 +5,19 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TypePage from './typePages/typePage';
 import HomePage from './homePage'
 import AllTypes from './typePages/allTypes';
+import { createBrowserHistory } from 'history';
 
 function Router() {
 
 	const [searchCriteria, setSearchCriteria] = useState("")
 
+	const history = createBrowserHistory();
+
 	return (
 		<div>
 			<Header />
 			<Navbar setSearchCriteria={setSearchCriteria} />
-			<BrowserRouter>
+			<BrowserRouter history={history}>
 				<Switch>
 					<Route exact={true} path={["/myPlants", "/"]}>
 						<HomePage searchCriteria={searchCriteria} />

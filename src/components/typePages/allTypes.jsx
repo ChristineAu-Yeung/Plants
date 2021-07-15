@@ -11,6 +11,10 @@ const AllTypes = () => {
 		{
 			name:"Alocasia",
 			photos:"https://images.unsplash.com/photo-1571591707151-66ef4c22418e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YWxvY2FzaWF8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
+		},
+		{
+			name:"Philodendron",
+			photos:"https://1.bp.blogspot.com/-0eMhMYn_ur8/Xz01uy6DHNI/AAAAAAAAAKA/KxeJF0yt83A9uSqzJJSjBzwDDWs_afTeACLcBGAsYHQ/s1600/Philodendron_gloriosum_foliage_.jpg"
 		}
 	]
 

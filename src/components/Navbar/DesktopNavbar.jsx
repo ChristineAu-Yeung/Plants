@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import kaisa from '../images/kai.jpg';
-import DropDown from './dropDown';
+import DropDown from './DesktopDropDown';
 import { Row, Col } from 'react-bootstrap';
 import AddPlantModal from './AddPlantModal';
+import { useHistory } from 'react-router-dom';
 
 function NavBar({ setSearchCriteria }) {
 
@@ -26,6 +27,12 @@ function NavBar({ setSearchCriteria }) {
 
 	const [showModal, setShowModal] = useState(false);
 
+	let history = useHistory();
+
+  const redirect = () => {
+    history.push('/myPlants')
+  }
+	
 	return (
 
 		<div>
@@ -38,12 +45,12 @@ function NavBar({ setSearchCriteria }) {
 					<Col>
 						<div className="tempNavBar">
 							<div className="leftNavBar">
-								<div href="/myPlants">myPlants</div>
+								<a href='/myPlants' className="NavBarLinks">myPlants</a>
 								<DropDown />
-								<div className="genusTitle">Genus</div>
+								<a href="AllTypes" className="NavBarLinks genusTitle">Genus</a>
 							</div>
 							<div className="rightNavBar">
-								{console.log(showModal)}
+								{/* {console.log(showModal)} */}
 								<button className="navBarButton" onClick={() => setShowModal(true)}>Add a Plant</button>
 								<img className="avatarImage" src={kaisa} />
 								<input className="navBarInput" placeholder="Search" />

@@ -64,7 +64,7 @@ function HomePage(props) {
 }
 
 function mapStateToProps(state) {
-	console.log({ state })
+	// console.log({ state })
 	const { plants } = state;
 	return {
 		plants: plants.plants

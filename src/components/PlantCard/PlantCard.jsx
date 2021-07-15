@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PlantCard = (props) => {
-	console.log({ props })
+	// console.log({ props })
 	return (
 		<div className="plantCard">
 			<img className={"undraggable"} src={props.src} />

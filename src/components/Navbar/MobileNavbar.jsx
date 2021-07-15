@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import kaisa from '../images/kai.jpg';
-import DropDown from './dropDown';
+import DropDown from './DesktopDropDown';
 import { Container, Row, Col } from 'react-bootstrap';
 import MobileDropdown from './MobileDropdown';
 
