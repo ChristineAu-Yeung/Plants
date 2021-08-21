@@ -1,40 +1,30 @@
 import React, { useState } from 'react';
-import kaisa from '../images/kai.jpg';
-import DropDown from './DesktopDropDown';
 import { Row, Col } from 'react-bootstrap';
+// import { useHistory } from 'react-router-dom';
+import Kaisa from '../Images/Kaisa.jpg';
+import DropDown from './DesktopDropDown';
 import AddPlantModal from './AddPlantModal';
-import { useHistory } from 'react-router-dom';
 
 function NavBar({ setSearchCriteria }) {
 
-	function search(name) {
-		// console.log(searchName);
-		// console.log("here", (name && typeof(name) === "string"))
-		setSearchCriteria(name !== undefined && typeof (name) === "string" ? name : searchName);
-	}
-
-	function update(e) {
-		console.log(e)
-		setSearchName(e.target.value);
-		// console.log(e.target.value)
-		if (e.target.value.length < 1) search("")
-	}
-
-	let [searchName, setSearchName] = useState("")
-	// type and function return 
-	// let [a,b] = [0,1]
-	// console.log({a,b})
-
 	const [showModal, setShowModal] = useState(false);
 
-	let history = useHistory();
+	// function search(name) {
+	// 	setSearchCriteria(name !== undefined && typeof (name) === "string" ? name : searchName);
+	// }
+	// function update(e) {
+	// 	console.log(e)
+	// 	setSearchName(e.target.value);
+	// 	if (e.target.value.length < 1) search("")
+	// }
+	// let [searchName, setSearchName] = useState("")
 
-  const redirect = () => {
-    history.push('/myPlants')
-  }
+	// let history = useHistory();
+  // const redirect = () => {
+  //   history.push('/myPlants')
+  // }
 	
 	return (
-
 		<div>
 			{
 				showModal &&
@@ -52,7 +42,7 @@ function NavBar({ setSearchCriteria }) {
 							<div className="rightNavBar">
 								{/* {console.log(showModal)} */}
 								<button className="navBarButton" onClick={() => setShowModal(true)}>Add a Plant</button>
-								<img className="avatarImage" src={kaisa} />
+								<img alt="" className="avatarImage" src={Kaisa} />
 								<input className="navBarInput" placeholder="Search" />
 								<button className="navBarButton">Search</button>
 							</div>

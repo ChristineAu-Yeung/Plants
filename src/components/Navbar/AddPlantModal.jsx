@@ -1,9 +1,6 @@
-import { useState } from "react";
-
 function AddPlantModal(props) {
 
 	return (
-
 		<div className="addPlantModal">
 			<div className="modalTitle">Enter Plant Details</div>
 			<div className="modalPlantInfo">

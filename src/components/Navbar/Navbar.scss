@@ -1,176 +1,158 @@
 .tempNavBar {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	font-family: "Raleway", sans-serif;
-	font-weight: 600;
-	background-color: rgba(255, 255, 255, 0.918);
-	height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.918);
+  height: 4rem;
 
-	.avatarImage {
-		height: 2.5rem;
-		width: 2.5rem;
-		border-radius: 5rem;
-	}
+  .avatarImage {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 5rem;
+  }
 
-	.leftNavBar {
-		font-size: large;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		width: 16rem;
-		margin-left: 0.5rem;
-	}
+  .leftNavBar {
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 16rem;
+    margin-left: 0.5rem;
+  }
 
-	.rightNavBar {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		width: 27.5rem;
-	}
+  .rightNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 27.5rem;
+  }
 
-	// .genusTitle {
-	// 	margin-left: 5px;
-	// }
+  .dropDown {
+    display: inline-block;
+  }
 
-	.dropDown {
-		display: inline-block;
-	}
+  .dropDownTitle {
+    padding-right: 1rem;
+    border-right: 2px solid black;
+    margin: 0rem 0.25rem 0rem 0.25rem;
+  }
 
-	.dropDownTitle {
-		padding-right: 1rem;
-		border-right: 2px solid black;
-		margin: 0rem 0.25rem 0rem 0.25rem;
-	}
+  .dropDownContent {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #ffff;
+    border-radius: 0.25rem;
+    width: 10rem;
+    height: auto;
+  }
 
-	.dropDownContent {
-		display: none;
-		position: absolute;
-		z-index: 1;
-		background-color: #ffff;
-		border-radius: 0.25rem;
-		width: 10rem;
-		height: auto;
-	}
+  .dropDownContent.active {
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+  }
 
-	.dropDownContent.active {
-		display: flex;
-		flex-direction: column;
-		z-index: 5;
-	}
+  .navBarInput {
+    border-radius: 0.5rem;
+    background-color: #eeeeee;
+    border: none;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
 
-	.navBarInput {
-		border-radius: 0.5rem;
-		background-color: #eeeeee;	
-		border: none;
-		padding: 0.5rem 1rem 0.5rem 1rem;
-	}
+  .navBarInput:focus {
+    outline: none;
+  }
 
-	.navBarInput:focus {
-		outline: none;	
-	}		
+  .navBarInput::placeholder {
+    font-weight: 600;
+  }
 
-	.navBarInput::placeholder {
-		font-weight: 600;
-	}
+  .navBarButton {
+    border-radius: 0.5rem;
+    border: none;
+    background-color: rgb(185, 204, 185);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 
-
-	.navBarButton {
-		border-radius: 0.5rem;
-		border: none;
-		background-color: rgb(185, 204, 185);
-		font-weight: 600;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		overflow: hidden;
-	}
-
-	.NavBarLinks {
-		color: #030303;
-		text-decoration: none;
-	}
-
+  .NavBarLinks {
+    color: #030303;
+    text-decoration: none;
+  }
 }
 
 .addPlantModal {
-	position: fixed;
-	top: 30%;
-	left: 30%;
-	z-index: 5;
-	border: 2px solid #030303;
-	width: 40%;
-	height: 40%;
-	max-width: 450px;
-	max-height: 350px;
-	min-width: 420px;
-	min-height: 240px;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  z-index: 5;
+  border: 2px solid #030303;
+  width: 40%;
+  height: 40%;
+  max-width: 450px;
+  max-height: 350px;
+  min-width: 420px;
+  min-height: 240px;
   font-family: "Raleway", sans-serif;
-	font-weight: 700;
-	background-color: rgba(185, 204, 185, 0.747);
-	border-radius: 0.5rem;
-  display: flex;	
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	
-	.modalTitle {
-		font-size: 1.5rem;
-		margin: -2rem 0rem 2rem 0rem;
-	}
+  font-weight: 700;
+  background-color: rgba(185, 204, 185, 0.747);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-	.modalPlantInfo {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-		width: 25rem;
-		padding: 0rem 1rem 0rem 1rem;
-	}
+  .modalTitle {
+    font-size: 1.5rem;
+    margin: -2rem 0rem 2rem 0rem;
+  }
 
-	.modalInput {
-		border-radius: 0.25rem;
-		border: none;
-		margin-bottom: 0.5rem;
-		width: 18rem;
-	}
+  .modalPlantInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 25rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
 
-	.modalLabel {
-		margin-top: 10px;
-		min-width: 6rem;
-	}
+  .modalInput {
+    border-radius: 0.25rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    width: 18rem;
+  }
 
-	.modalButtons {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		width: 10rem;
+  .modalLabel {
+    margin-top: 10px;
+    min-width: 6rem;
+  }
 
-		.modalCancelButton{ 
-			border-radius: 0.25rem;
-			font-weight: 700;
-			margin-top: 10px;
-			border: none;
-		}
+  .modalButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
 
-		.modalSubmitButton{ 
-			border-radius: 0.25rem;
-			font-weight: 700;
-			margin-top: 10px;
-			border: none;
-		}
+    .modalCancelButton {
+      border-radius: 0.25rem;
+      font-weight: 700;
+      margin-top: 10px;
+      border: none;
+    }
 
-	}
-
-	// .modalPlantType {
-	// 	display: flex;
-	// 	flex-direction: row;
-	// }	
-
-	// .modalPlantImage {
-	// 	display: flex;
-	// 	flex-direction: row;
-	// }
+    .modalSubmitButton {
+      border-radius: 0.25rem;
+      font-weight: 700;
+      margin-top: 10px;
+      border: none;
+    }
+  }
 }
-

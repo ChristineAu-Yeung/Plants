@@ -1,8 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { combineReducers } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import users from './reducers/user.reducer';
 import plants from './reducers/plants.reducer';
-import thunkMiddleware from 'redux-thunk';
+
 const enhancers = []
 const middleware = [thunkMiddleware]
 

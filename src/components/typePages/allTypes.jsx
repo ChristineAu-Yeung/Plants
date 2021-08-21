@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import TypeCard from './typeCard';
+import TypeCard from './TypeCard';
 
 const AllTypes = () => {
 
@@ -30,7 +30,7 @@ const AllTypes = () => {
 					allTypes.map((type) => {
 						return (
 							<Col sm={6} md={6} lg={4}>
-								<TypeCard name={type.name} photos={type.photos}/>
+								<TypeCard key={type.name} name={type.name} photos={type.photos}/>
 							</Col>
 						)
 					})

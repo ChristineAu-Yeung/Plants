@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import './TypePage.scss'
+import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './typePage.scss'
 import { useParams } from 'react-router-dom'
 import { connect } from "react-redux";
 import PlantCard from '../PlantCard/PlantCard';
@@ -10,18 +10,16 @@ const TypePage = (props) => {
 	const { dispatch } = props;
 	const { plant } = useParams();
 	const plantType = (plant?.length > 0  ? plant : "");
-
 	const description = "Yo my plants are the bee's knees";
-
 	const { plants } = props;
 
 	useEffect(() => {
 		setInterval(() => { dispatch(plantsActions.getPlantsbyType(plantType)) }, 60000);
-	}, [])
+	})
 
 	useEffect(() => {
 		dispatch(plantsActions.getPlantsbyType(plantType));
-	}, [])
+	})
 
 	return (
 		<Container>
@@ -36,7 +34,7 @@ const TypePage = (props) => {
 					plants.map((plant) => {
 						return (
 							<Col sm={6} md={6} lg={3}>
-								<PlantCard name={plant.name} src={plant.photos} />
+								<PlantCard key={plant.name} name={plant.name} src={plant.photos} />
 							</Col>
 						)
 					})

@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {Container, Row, Col } from 'react-bootstrap';
-import leaves from './images/Leaves.svg';
+import leaves from './Images/Leaves.svg';
 
 function header() {
     return (
@@ -8,7 +8,7 @@ function header() {
             <Row>
                 <Col xs={12} className={"no-padding"}>
                     <div className={"header"}>
-												<img className="leavesIcon" src={leaves}/>
+												<img alt="" className="leavesIcon" src={leaves}/>
                         <div className={"headerName"}>Water is Wet</div>
                     </div>
                 </Col>

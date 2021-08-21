@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-import kaisa from '../images/kai.jpg';
-import DropDown from './DesktopDropDown';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import Kaisa from '../Images/Kaisa.jpg';
+import { Row, Col } from 'react-bootstrap';
 import MobileDropdown from './MobileDropdown';
 
 function MobileNavbar({ setSearchCriteria }) {
 
 	return (
-
 		<Row>
 			<Col>
 				<div href="/myPlants">myPlants</div>
-				<img className="avatarImage" src={kaisa} />
+				<img alt="" className="avatarImage" src={Kaisa} />
 				<MobileDropdown/>
 			</Col>
 		</Row>
-
 	)
 }
 

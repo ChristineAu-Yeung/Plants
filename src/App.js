@@ -1,10 +1,11 @@
 import './App.scss';
+import HomePageRouter from './components/HomePageRouter';
 
-import Router from './components/router';
 require('dotenv').config()
+
 function App() {
   return (
-    <Router/>
+    <HomePageRouter/>
   );
 }
 
