@@ -25,7 +25,7 @@ function NavBar({ setSearchCriteria }) {
   // }
 	
 	return (
-		<div>
+		<div className="relative">
 			{
 				showModal &&
 				<AddPlantModal showModal={showModal} setShowModal={(showModal) => setShowModal(showModal)} />

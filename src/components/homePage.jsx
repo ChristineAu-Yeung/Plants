@@ -1,24 +1,25 @@
 import React, { useEffect } from 'react';
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PlantCard from './PlantCard/PlantCard';
 import plantsActions from '../redux/actions/plants.action';
 
 function HomePage(props) {
 	
-	const { dispatch } = props;
-	const { plants } = props;
+	const dispatch = useDispatch();
+	const { plants } = useSelector((state) => state.plants);
 
-	// useEffect(() => {
-	// 	setInterval(() => { dispatch(plantsActions.getPlants()) }, 60000);
-	// }, [])
+	useEffect(() => {
+		setInterval(() => { dispatch(plantsActions.getPlants()) }, 60000);
+	}, [])
 
 	useEffect(() => {
 		dispatch(plantsActions.getPlants());
-	})
+	}, [])
 	
 	const getHomepagePlants = () => {
 		const plantNumber = plants.length;
 		const plantThird = Math.ceil(plantNumber / 3)
+		// console.log({plants})
 		return (
 			<div>
 				<div className={"flexyRow"}>
@@ -28,6 +29,8 @@ function HomePage(props) {
 								return (
 									<PlantCard key={plant.name} name={plant.name} src={plant.photos[0]} />
 								)
+							} else {
+								return null
 							}
 						})}
 					</div>
@@ -37,6 +40,8 @@ function HomePage(props) {
 								return (
 									<PlantCard key={plant.name} name={plant.name} src={plant.photos[0]} />
 								)
+								} else {
+									return null
 								}
 						})}
 					</div>
@@ -46,6 +51,8 @@ function HomePage(props) {
 								return (
 									<PlantCard key={plant.name} name={plant.name} src={plant.photos[0]} />
 								)
+							} else {
+								return null
 							}
 						})}
 					</div>
@@ -62,12 +69,4 @@ function HomePage(props) {
 	)
 }
 
-function mapStateToProps(state) {
-	// console.log({ state })
-	const { plants } = state;
-	return {
-		plants: plants.plants
-	}
-}
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;

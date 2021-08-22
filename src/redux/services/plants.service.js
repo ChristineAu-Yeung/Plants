@@ -3,11 +3,8 @@ import axios from 'axios';
 const url = process.env.REACT_APP_BACKEND_URL;
 
 const getPlants = async () => {
-	const requestOptions = {
-		method: 'GET',
-	};
 
-	return await axios.get(`${url}/plants`, requestOptions)
+	return await axios.get(`${url}/plants`)
 		.then(data => {
 			return data.data;
 		})
@@ -17,11 +14,8 @@ const getPlants = async () => {
 }
 
 const getPlantsbyType = async (plantType) => {
-	const requestOptions = {
-		method: 'GET',
-	};
 	
-	return await axios.get(`${url}/plants?type=${plantType}`, requestOptions)
+	return await axios.get(`${url}/plants?type=${plantType}`)
 	.then(data => {
 		return data.data;
 	})
@@ -30,8 +24,20 @@ const getPlantsbyType = async (plantType) => {
 	});
 }
 
+const addPlant = async (plantInfo) => {
+
+	return await axios.post(`${url}/plants`, plantInfo)
+	.then(data => {
+		return data.data;
+	})
+	.catch(error => {
+		return error; 
+	})
+}
+
 const userService = {
 	getPlants, 
-	getPlantsbyType
+	getPlantsbyType,
+	addPlant
 }
 export default userService;

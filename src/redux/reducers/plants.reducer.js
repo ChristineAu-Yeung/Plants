@@ -15,6 +15,10 @@ export default function plants(state = initialState, action) {
 				...state,
 				plants: action.payload,
 			}
+		case 'ADD_PLANT_SUCESS':
+			return {
+				...state
+			}
 		default:
 			return state;
 	}
