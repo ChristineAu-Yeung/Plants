@@ -1,0 +1,120 @@
+.plantCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+  z-index: 2;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-height: 100rem;
+    min-height: 5rem;
+    border-radius: 0.25rem;
+  }
+
+  .greyscale {
+    filter: grayscale(75%);
+  }
+
+  .name {
+    color: #ffffff;
+    background-color: rgba(34, 34, 34, 0.315);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 0rem 0.45rem 0rem 0.45rem;
+    margin-top: -3rem;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.updatePlantButton {
+  font-family: "Raleway", sans-serif;
+  left: 35%;
+  width: 30;
+  position: absolute;
+  z-index: 10;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgb(185, 204, 185);
+  font-weight: 600;
+}
+
+.updatePlantModal {
+  top: 30%;
+  left: 30%;
+  z-index: 15;
+  position: fixed;
+  width: 40%;
+  height: 40%;
+  max-width: 450px;
+  max-height: 350px;
+  min-width: 420px;
+  min-height: 240px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  background-color: rgba(88, 117, 81, 0.938);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .modalTitle {
+    font-size: 1.5rem;
+    margin: -2rem 0rem 2rem 0rem;
+  }
+
+  .modalPlantInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 25rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+
+  .modalInput {
+    border-radius: 0.25rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    width: 18rem;
+  }
+
+  .modalLabel {
+    margin-top: 10px;
+    min-width: 6rem;
+  }
+
+  .modalButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+
+    .modalCancelButton {
+      border-radius: 0.25rem;
+      font-weight: 700;
+      margin-top: 10px;
+      border: none;
+    }
+
+    .modalSubmitButton {
+      border-radius: 0.25rem;
+      font-weight: 700;
+      margin-top: 10px;
+      border: none;
+    }
+  }
+}
