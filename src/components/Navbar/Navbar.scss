@@ -20,14 +20,15 @@
     flex-direction: row;
     justify-content: space-evenly;
     width: 16rem;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 
   .rightNavBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 27.5rem;
+    width: 29rem;
+    padding-right: 1rem;
   }
 
   .dropDown {
@@ -37,7 +38,11 @@
   .dropDownTitle {
     padding-right: 1rem;
     border-right: 2px solid black;
-    margin: 0rem 0.25rem 0rem 0.25rem;
+    margin: 0rem 0.25rem 0rem 1rem;
+  }
+
+  .genusTitle {
+    margin-left: 0.5rem;
   }
 
   .dropDownContent {
@@ -46,8 +51,9 @@
     z-index: 1;
     background-color: #ffff;
     border-radius: 0.25rem;
-    width: 10rem;
+    width: 12rem;
     height: auto;
+    padding: 1rem 0.5rem 1rem 0.5rem;
   }
 
   .dropDownContent.active {

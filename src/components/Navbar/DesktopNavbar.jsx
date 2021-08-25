@@ -4,8 +4,16 @@ import Kaisa from "../Images/Kaisa.jpg";
 import DropDown from "./DesktopDropDown";
 import AddPlantModal from "./AddPlantModal";
 
-function NavBar() {
+function NavBar(props) {
   const [showModal, setShowModal] = useState(false);
+  const [value, setValue] = useState("");
+  const { setSearchCriteria } = props;
+
+  const checkKeyDown = (e) => {
+    if (e.key === "Enter") {
+      setSearchCriteria(value);
+    }
+  };
 
   return (
     <div className="relative">
@@ -25,7 +33,7 @@ function NavBar() {
                 </a>
                 <DropDown />
                 <a href="AllTypes" className="NavBarLinks genusTitle">
-                  Genus
+                  Genuses
                 </a>
               </div>
               <div className="rightNavBar">
@@ -37,8 +45,20 @@ function NavBar() {
                   Add a Plant
                 </button>
                 <img alt="" className="avatarImage" src={Kaisa} />
-                <input className="navBarInput" placeholder="Search" />
-                <button className="navBarButton">Search</button>
+                <input
+                  className="navBarInput"
+                  onChange={(e) => setValue(e.target.value)}
+                  onKeyDown={(e) => checkKeyDown(e)}
+                  placeholder="Search"
+                />
+                <button
+                  className="navBarButton"
+                  onClick={() => {
+                    setSearchCriteria(value);
+                  }}
+                >
+                  Search
+                </button>
               </div>
             </div>
           </Col>
