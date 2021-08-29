@@ -2,7 +2,11 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import plantsActions from '../../redux/actions/plants.action'
 
-function AddPlantModal(props) {
+interface modalProps {
+	setShowModal: (b: boolean) => void
+}
+
+function AddPlantModal(props: modalProps) {
 
 	const [ plantName, setPlantName ] = useState("")
 	const [ plantType, setPlantType ] = useState("")

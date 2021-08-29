@@ -1,52 +1,67 @@
-import plantsService from '../services/plants.service';
+import plantsService from "../services/plants.service";
 
 const getPlants = () => {
-	return dispatch => {
-		plantsService.getPlants()
-			.then(res => {
-				dispatch(success(res))
-			})
-			.catch((error) => {
-				dispatch(failure(error))
-			})
-	}
+  return (dispatch) => {
+    plantsService
+      .getPlants()
+      .then((res) => {
+        dispatch(success(res));
+      })
+      .catch((error) => {
+        dispatch(failure(error));
+      });
+  };
 
-	function success(payload) { return { type: 'GET_PLANTS_SUCCESS', payload } } 
-	function failure(error) { return { type: 'GET_PLANTS_FAILURE', error } }
-}
+  function success(payload) {
+    return { type: "GET_PLANTS_SUCCESS", payload };
+  }
+  function failure(error) {
+    return { type: "GET_PLANTS_FAILURE", error };
+  }
+};
 
 const getPlantsbyType = (plantType) => {
-	return dispatch => {
-		plantsService.getPlantsbyType(plantType)
-			.then(res => {
-				dispatch(success(res))
-			})
-			.catch((error) => {
-				dispatch(failure(error))
-			})
-	}
-	function success(payload) { return { type: 'GET_PLANTS_BY_TYPE_SUCCESS', payload } }
-	function failure(error) { return { type: 'GET_PLANTS_BY_TYPE_FAILURE', error } }
-}
+  return (dispatch) => {
+    plantsService
+      .getPlantsbyType(plantType)
+      .then((res) => {
+        dispatch(success(res));
+      })
+      .catch((error) => {
+        dispatch(failure(error));
+      });
+  };
+  function success(payload) {
+    return { type: "GET_PLANTS_BY_TYPE_SUCCESS", payload };
+  }
+  function failure(error) {
+    return { type: "GET_PLANTS_BY_TYPE_FAILURE", error };
+  }
+};
 
 const addPlant = (plantInfo) => {
-	return dispatch => {
-		plantsService.addPlant(plantInfo)
-			.then(res => {
-				dispatch(success(res))
-			})
-			.catch((error) => {
-				dispatch(failure(error))
-			})
-	}
-	function success(payload) { return { type: 'ADD_PLANT_SUCCESS', payload } }
-	function failure(error) { return { type: 'ADD_PLANT_FAILURE', error } }
-}
+  return (dispatch) => {
+    plantsService
+      .addPlant(plantInfo)
+      .then((res) => {
+        dispatch(success(res));
+      })
+      .catch((error) => {
+        dispatch(failure(error));
+      });
+  };
+  function success(payload) {
+    return { type: "ADD_PLANT_SUCCESS", payload };
+  }
+  function failure(error) {
+    return { type: "ADD_PLANT_FAILURE", error };
+  }
+};
 
 const plantsActions = {
-	getPlants,
-	getPlantsbyType,
-	addPlant
-}
+  getPlants,
+  getPlantsbyType,
+  addPlant,
+};
 
 export default plantsActions;

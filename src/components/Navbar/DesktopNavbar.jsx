@@ -32,7 +32,7 @@ function NavBar(props) {
                   myPlants
                 </a>
                 <DropDown />
-                <a href="AllTypes" className="NavBarLinks genusTitle">
+                <a href="/AllTypes" className="NavBarLinks genusTitle">
                   Genuses
                 </a>
               </div>

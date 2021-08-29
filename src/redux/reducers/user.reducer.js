@@ -1,14 +1,15 @@
 let initialState = {
-    userData: {}
-}
+  userData: {},
+};
 
 export default function users(state = initialState, action) {
-    switch (action.type) {
-        case 'LOGIN':
-            return {
-                ...state
-            }
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case "LOGIN":
+      console.log(...state);
+      return {
+        ...state,
+      };
+    default:
+      return state;
+  }
 }
