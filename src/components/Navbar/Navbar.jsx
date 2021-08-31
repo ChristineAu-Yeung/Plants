@@ -1,10 +1,10 @@
 import DesktopNavbar from "./DesktopNavbar";
-import MobileNavbar from "./MobileNavbar";
+import MobileDropdown from "./MobileDropdown";
 import { useEffect, useState } from "react";
 import "./Navbar.scss";
 
 function Navbar(props) {
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(window.innerWidth);
   const { setSearchCriteria } = props;
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function Navbar(props) {
   }, []);
 
   if (width < 768) {
-    return <MobileNavbar />;
+    return <MobileDropdown />;
   } else {
     return <DesktopNavbar setSearchCriteria={setSearchCriteria} />;
   }

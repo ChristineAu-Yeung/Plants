@@ -1,3 +1,6 @@
+$greenBackground: rgb(185, 204, 185);
+$whiteBackground: rgba(255, 255, 255, 0.918);
+
 .tempNavBar {
   display: flex;
   flex-direction: row;
@@ -5,7 +8,7 @@
   align-items: center;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.918);
+  background-color: $whiteBackground;
   height: 4rem;
 
   .avatarImage {
@@ -95,6 +98,46 @@
   .NavBarLinks {
     color: #030303;
     text-decoration: none;
+  }
+}
+
+.mdropDown {
+  width: 100%;
+  min-height: 2.5rem;
+  background-color: $whiteBackground;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  z-index: 20;
+
+  .mdropDownTitle {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    z-index: 10;
+  }
+
+  .mdropDownContent {
+    display: none;
+  }
+
+  .mdropDownContent.active {
+    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 10rem;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 5;
+
+    .mInputSearch {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 2rem;
+    }
   }
 }
 
