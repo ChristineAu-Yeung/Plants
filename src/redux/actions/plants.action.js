@@ -58,10 +58,30 @@ const addPlant = (plantInfo) => {
   }
 };
 
+const updatePlant = (id, plantInfo) => {
+  return (dispatch) => {
+    plantsService
+      .updatePlant(id, plantInfo)
+      .then((res) => {
+        dispatch(success(res));
+      })
+      .catch((error) => {
+        dispatch(failure(error));
+      });
+  };
+  function success(payload) {
+    return { type: "UPDATE_PLANT_SUCCESS", payload };
+  }
+  function failure(error) {
+    return { type: "UPDATE_PLANT_FAILURE", error };
+  }
+};
+
 const plantsActions = {
   getPlants,
   getPlantsbyType,
   addPlant,
+  updatePlant,
 };
 
 export default plantsActions;

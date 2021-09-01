@@ -35,9 +35,21 @@ const addPlant = async (plantInfo) => {
     });
 };
 
+const updatePlant = async (id, plantInfo) => {
+  return await axios
+    .post(`${url}/plants/${id}`, plantInfo)
+    .then((data) => {
+      return data.data;
+    })
+    .catch((error) => {
+      return error;
+    });
+};
+
 const plantService = {
   getPlants,
   getPlantsbyType,
   addPlant,
+  updatePlant,
 };
 export default plantService;

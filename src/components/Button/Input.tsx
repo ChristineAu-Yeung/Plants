@@ -5,9 +5,9 @@ interface inputProps {
 	placeholder: string;
 }
 
-const Input = ( props: inputProps ) => {
+const Input = ( {placeholder} : inputProps )  => {
 	return (
-		<input className="Input" placeholder={props.placeholder}></input>
+		<input className="Input" placeholder={placeholder}></input>
 	)
 }
 

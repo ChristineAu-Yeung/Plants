@@ -19,6 +19,10 @@ export default function plants(state = initialState, action) {
       return {
         ...state,
       };
+    case "UPDATE_PLANT_SUCESS":
+      return {
+        ...state,
+      };
     default:
       return state;
   }

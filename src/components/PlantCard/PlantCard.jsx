@@ -36,7 +36,7 @@ const PlantCard = (props) => {
         <img
           alt=""
           className={`undraggable ${plantCardHover ? "greyscale" : ""}`}
-          src={props.src}
+          src={props.photo}
         />
         <div className="name unselectable">{props.name}</div>
         <div className="info">{props.info}</div>
@@ -44,6 +44,7 @@ const PlantCard = (props) => {
       <div>
         {showModal && (
           <UpdatePlantModal
+            _id={props._id}
             showModal={showModal}
             setShowModal={(showModal) => setShowModal(showModal)}
           />

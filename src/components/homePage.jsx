@@ -36,9 +36,10 @@ function HomePage(props) {
               if (index < plantThird) {
                 return (
                   <PlantCard
+                    _id={plant._id}
                     key={plant.name}
                     name={plant.name}
-                    src={plant.photos[0]}
+                    photo={plant.photos[0]}
                   />
                 );
               } else {
@@ -51,9 +52,10 @@ function HomePage(props) {
               if (index >= plantThird && index < 2 * plantThird) {
                 return (
                   <PlantCard
+                    _id={plant._id}
                     key={plant.name}
                     name={plant.name}
-                    src={plant.photos[0]}
+                    photo={plant.photos[0]}
                   />
                 );
               } else {
@@ -66,9 +68,10 @@ function HomePage(props) {
               if (index >= 2 * plantThird) {
                 return (
                   <PlantCard
+                    _id={plant._id}
                     key={plant.name}
                     name={plant.name}
-                    src={plant.photos[0]}
+                    photo={plant.photos[0]}
                   />
                 );
               } else {
