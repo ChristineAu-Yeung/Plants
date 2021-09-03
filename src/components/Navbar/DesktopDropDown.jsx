@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-function DropDown(props) {
+function DropDown() {
   const [active, setActive] = useState(false);
   const { plants } = useSelector((state) => state.plants);
-  // const types = plants ? plants.filter((plant, index) => plants.indexOf(plant) === index) : []
   const types = [];
   for (let plant of plants) {
     if (types.indexOf(plant.type.trim()) === -1) {

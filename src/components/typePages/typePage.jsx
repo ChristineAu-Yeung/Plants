@@ -1,54 +1,58 @@
-import './TypePage.scss'
-import React, { useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { useParams } from 'react-router-dom'
+import "./TypePage.scss";
+import React, { useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
-import PlantCard from '../PlantCard/PlantCard';
-import plantsActions from '../../redux/actions/plants.action';
+import PlantCard from "../PlantCard/PlantCard";
+import plantsActions from "../../redux/actions/plants.action";
 
 const TypePage = (props) => {
-	const { dispatch } = props;
-	const { plant } = useParams();
-	const plantType = (plant?.length > 0  ? plant : "");
-	const description = "Yo my plants are the bee's knees";
-	const { plants } = props;
+  const { dispatch } = props;
+  const { plant } = useParams();
+  const plantType = plant?.length > 0 ? plant : "";
+  const description = "Yo my plants are the bee's knees";
+  const { plants } = props;
 
-	useEffect(() => {
-		setInterval(() => { dispatch(plantsActions.getPlantsbyType(plantType)) }, 60000);
-	})
+  useEffect(() => {
+    setInterval(() => {
+      dispatch(plantsActions.getPlantsbyType(plantType));
+    }, 60000);
+  }, []);
 
-	useEffect(() => {
-		dispatch(plantsActions.getPlantsbyType(plantType));
-	})
+  useEffect(() => {
+    dispatch(plantsActions.getPlantsbyType(plantType));
+  }, []);
 
-	return (
-		<Container>
-			<Row className={"plantHeader"}>
-				<Col xs={12}>
-					<div className="title">{plantType}</div>
-					<div className="description">{description}</div>
-				</Col>
-			</Row>
-			<Row>
-				{
-					plants.map((plant) => {
-						return (
-							<Col sm={6} md={6} lg={3}>
-								<PlantCard key={plant.name} name={plant.name} src={plant.photos} />
-							</Col>
-						)
-					})
-				}
-			</Row>
-		</Container>
-	)
-}
+  return (
+    <Container>
+      <Row className={"plantHeader"}>
+        <Col xs={12}>
+          <div className="title">{plantType}</div>
+          <div className="description">{description}</div>
+        </Col>
+      </Row>
+      <Row>
+        {plants.map((plant) => {
+          return (
+            <Col sm={6} md={6} lg={3}>
+              <PlantCard
+                key={plant.name}
+                name={plant.name}
+                photo={plant.photos}
+              />
+            </Col>
+          );
+        })}
+      </Row>
+    </Container>
+  );
+};
 
 function mapStateToProps(state) {
-	const { plants } = state;
-	return {
-		plants: plants.plants
-	}
+  const { plants } = state;
+  return {
+    plants: plants.plants,
+  };
 }
 
 export default connect(mapStateToProps)(TypePage);

@@ -1,5 +1,5 @@
 $greenBackground: rgb(185, 204, 185);
-$whiteBackground: rgba(255, 255, 255, 0.918);
+$whiteBackground: rgba(247, 247, 247, 0.411);
 
 .tempNavBar {
   display: flex;
@@ -102,6 +102,10 @@ $whiteBackground: rgba(255, 255, 255, 0.918);
 }
 
 .mdropDown {
+  * {
+    text-decoration: none;
+  }
+
   width: 100%;
   min-height: 2.5rem;
   background-color: $whiteBackground;
@@ -112,6 +116,11 @@ $whiteBackground: rgba(255, 255, 255, 0.918);
   font-weight: 600;
   z-index: 20;
 
+  .NavBarLinks {
+    color: #030303;
+    text-decoration: none;
+  }
+
   .mdropDownTitle {
     margin-right: 1rem;
     font-size: 1.5rem;
@@ -119,23 +128,45 @@ $whiteBackground: rgba(255, 255, 255, 0.918);
   }
 
   .mdropDownContent {
+    margin-top: -1rem;
     display: none;
   }
 
-  .mdropDownContent.active {
+  .mdropDownContent.mobileActive {
     padding: 1.5rem 0.5rem 0.5rem 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 10rem;
+    min-height: 11rem;
     justify-content: space-between;
     width: 100%;
     z-index: 5;
+
+    .mtypesDropDown {
+      display: none;
+      width: 10rem;
+    }
+
+    .mtypesDropDown.typesActive {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 5rem;
+      z-index: 10;
+      background-color: rgba(228, 228, 228, 0.534);
+      border-radius: 0.5rem;
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    }
 
     .mInputSearch {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      margin-top: 0.35rem;
       height: 2rem;
     }
   }
