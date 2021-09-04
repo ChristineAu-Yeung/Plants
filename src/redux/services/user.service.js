@@ -6,7 +6,7 @@ const signUp = async ({ name, email, password }) => {
   return await axios
     .post(`${url}/users/signUp`, { name, email, password })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       return data.data;
     })
     .catch((error) => {

@@ -39,6 +39,25 @@ const getPlantsbyType = (plantType) => {
   }
 };
 
+const getAllTypes = () => {
+  return (dispatch) => {
+    plantsService
+      .getAllTypes()
+      .then((res) => {
+        dispatch(success(res));
+      })
+      .catch((error) => {
+        dispatch(failure(error));
+      });
+  };
+  function success(payload) {
+    return { type: "GET_ALL_TYPES_SUCCESS", payload };
+  }
+  function failure(error) {
+    return { type: "GET_ALL_TYPES_FAILURE", error };
+  }
+};
+
 const addPlant = (plantInfo) => {
   return (dispatch) => {
     plantsService
@@ -80,6 +99,7 @@ const updatePlant = (id, plantInfo) => {
 const plantsActions = {
   getPlants,
   getPlantsbyType,
+  getAllTypes,
   addPlant,
   updatePlant,
 };

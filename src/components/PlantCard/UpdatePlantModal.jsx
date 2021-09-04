@@ -13,7 +13,7 @@ const UpdatePlantModal = (props) => {
       return null;
     }
     props.setShowModal(false);
-    console.log(checkPlantInfo());
+    // console.log(checkPlantInfo());
     dispatch(plantsActions.updatePlant(props._id, checkPlantInfo()));
   }
 

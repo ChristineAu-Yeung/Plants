@@ -1,15 +1,16 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import plantsActions from "../../redux/actions/plants.action";
 
 function DropDown() {
   const [active, setActive] = useState(false);
-  const { plants } = useSelector((state) => state.plants);
-  const types = [];
-  for (let plant of plants) {
-    if (types.indexOf(plant.type.trim()) === -1) {
-      types.push(plant.type.trim());
-    }
-  }
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(plantsActions.getAllTypes());
+  }, []);
+
+  let { types } = useSelector((state) => state.plants);
 
   function MouseOver(event) {
     event.target.style.color = "rgba(88, 117, 81, 0.938)";

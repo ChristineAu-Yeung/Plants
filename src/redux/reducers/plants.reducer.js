@@ -1,5 +1,6 @@
 let initialState = {
   plants: [],
+  types: [],
 };
 
 export default function plants(state = initialState, action) {
@@ -14,6 +15,11 @@ export default function plants(state = initialState, action) {
       return {
         ...state,
         plants: action.payload,
+      };
+    case "GET_ALL_TYPES_SUCCESS":
+      return {
+        ...state,
+        types: action.payload,
       };
     case "ADD_PLANT_SUCESS":
       return {

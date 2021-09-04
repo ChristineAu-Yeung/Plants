@@ -24,6 +24,17 @@ const getPlantsbyType = async (plantType) => {
     });
 };
 
+const getAllTypes = async () => {
+  return await axios
+    .get(`${url}/plants/types`)
+    .then((data) => {
+      return data.data;
+    })
+    .catch((error) => {
+      return error;
+    });
+};
+
 const addPlant = async (plantInfo) => {
   return await axios
     .post(`${url}/plants`, plantInfo)
@@ -49,6 +60,7 @@ const updatePlant = async (id, plantInfo) => {
 const plantService = {
   getPlants,
   getPlantsbyType,
+  getAllTypes,
   addPlant,
   updatePlant,
 };

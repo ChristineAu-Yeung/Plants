@@ -17,7 +17,7 @@ function Navbar(props) {
   }, []);
 
   if (width < 768) {
-    return <MobileNavbar />;
+    return <MobileNavbar setSearchCriteria={setSearchCriteria} />;
   } else {
     return <DesktopNavbar setSearchCriteria={setSearchCriteria} />;
   }
